@@ -43,7 +43,7 @@ public class ListaMain {
                     break;
                 case 4:
                     edad=lista.elimiarAlInicio();
-                    JOptionPane.showMessageDialog(null,"El siguiente Dato: "+edad+" fue eliminado de la lista");
+                    JOptionPane.showMessageDialog(null,edad+": fue eliminado de la lista");
                 case 5:
                     break;
                 default:
