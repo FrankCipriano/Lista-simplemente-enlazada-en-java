@@ -69,4 +69,49 @@ public class Lista {
         }
         return edad;
     }
+    
+    //METODO PARA ELIMINAR UN NODO AL FINAL DE LA LISTA
+    public int eliminarAlFinal(){
+        int edad = fin.edad;
+        if(fin==inicio){
+            inicio=fin=null;
+        }else{
+            Nodo auxiliar=inicio;
+            while(auxiliar.siguiente!=fin){
+                auxiliar=auxiliar.siguiente;
+            }
+            fin=auxiliar;
+            fin.siguiente=null;
+        }
+        return edad;
+    }
+    //METODO PARA ELIMINAR UN NODO EN ESPECIFICO
+    public boolean eliminarNodo(int edad){
+        if(!estaVacia()){
+           if(fin==inicio && edad==inicio.edad){
+               inicio=fin=null;
+           }else if(edad==inicio.edad){
+               inicio=inicio.siguiente;
+           }else{
+               Nodo anterior,temporal;
+               anterior=inicio;
+               temporal=inicio.siguiente;
+               while(temporal!=null && temporal.edad!=edad){
+                   anterior=anterior.siguiente;
+                   temporal=temporal.siguiente;
+               }
+               if(temporal!=null){
+                   anterior.siguiente=temporal.siguiente;
+                   if(temporal==fin){
+                       fin=anterior;
+                   }
+               }else{
+                   return false;
+               }
+           }
+           return true;
+        }else{
+            return false;
+        }
+    }
 }

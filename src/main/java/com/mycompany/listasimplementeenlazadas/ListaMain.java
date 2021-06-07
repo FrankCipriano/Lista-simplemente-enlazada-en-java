@@ -15,10 +15,11 @@ public class ListaMain {
         int opcion,edad;
         Lista lista = new Lista();
         do{
-            opcion = Integer.parseInt(JOptionPane.showInputDialog(null,"-------LISTA DOBLEMENTE ENLAZADA--------\n"
+            opcion = Integer.parseInt(JOptionPane.showInputDialog(null,"-------LISTA SIMPLEMENTE ENLAZADA--------\n"
                     + "1. Ingresar al inicio de la lista\n2. Agregar al final de la lista"
                     + "\n3. Mostrar la lista\n4. Eliminar un elemento al inicio de la lista"
-                    + "\n5. Salir del programa\nSeleccione una opcion!.."));
+                    + "\n5. Eliminar un elemento al final de la lista\n6. Eliminar un Dato especifico\n7. Salir del programa\n"
+                    + "Seleccione una opcion!.."));
             switch(opcion){
                 case 1:
                     try{
@@ -44,11 +45,25 @@ public class ListaMain {
                 case 4:
                     edad=lista.elimiarAlInicio();
                     JOptionPane.showMessageDialog(null,edad+": fue eliminado de la lista");
+                    break;
                 case 5:
+                    edad=lista.eliminarAlFinal();
+                    JOptionPane.showMessageDialog(null,edad+": fue eliminado de la lista");
+                    break;
+                case 6:
+                    edad=Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese el dato a eliminar:"));
+                    if(lista.eliminarNodo(edad)){
+                        JOptionPane.showMessageDialog(null,edad+" Eliminado");
+                    }else{
+                        JOptionPane.showMessageDialog(null,"El dato ingresado no existe en la lista");
+                    }
+                    break;
+                case 7:
+                    JOptionPane.showMessageDialog(null,"Proceso terminado");
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Opcion no valida");
             }
-        }while(opcion!=5);
+        }while(opcion!=7);
     }
 }
