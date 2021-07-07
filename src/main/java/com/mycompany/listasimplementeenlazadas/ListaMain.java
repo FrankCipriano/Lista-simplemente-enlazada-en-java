@@ -73,6 +73,7 @@ public class ListaMain {
                     }else{
                         JOptionPane.showMessageDialog(null,"El dato "+edad+" no existe en la lista");
                     }
+                    break;
                 case 8:
                     JOptionPane.showMessageDialog(null,"Proceso terminado");
                     break;

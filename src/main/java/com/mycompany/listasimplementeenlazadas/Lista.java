@@ -120,6 +120,6 @@ public class Lista {
         while(temporal.siguiente!=null && temporal.edad!=edad){
             temporal=temporal.siguiente;
         }
-        return temporal!=null;
+        return (temporal.siguiente!=null);
     }
 }
