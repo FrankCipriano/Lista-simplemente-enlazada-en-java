@@ -114,4 +114,12 @@ public class Lista {
             return false;
         }
     }
+    //METODO PARA BUSCAR UN ELEMENTO EN LA LISTA
+    public boolean estaEnLaLista(int edad){
+        Nodo temporal = inicio;
+        while(temporal.siguiente!=null && temporal.edad!=edad){
+            temporal=temporal.siguiente;
+        }
+        return temporal!=null;
+    }
 }
